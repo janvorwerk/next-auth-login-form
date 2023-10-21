@@ -1,10 +1,12 @@
 "use client";
+import { useTranslations } from "next-intl";
 
 import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 
 export default function Page() {
   const session = useSession();
+  const t = useTranslations("messages");
 
   async function logout() {
     await signOut();
@@ -15,8 +17,7 @@ export default function Page() {
       {session.status === "authenticated" ? (
         <>
           <div className="">
-            Hello <span className="text-cyan-900 font-bold">{session.data?.user?.name}</span>, your are{" "}
-            <span className="text-cyan-900 font-bold">{session.status}</span>
+            {t("hello", { username: session?.data?.user?.name, status: session.status })}
           </div>
           <button className="bg-red-800 text-white p-2 rounded" onClick={logout}>
             Logout
@@ -25,7 +26,7 @@ export default function Page() {
       ) : (
         <>
           <div className="">
-            Hello, your are <span className="text-cyan-900 font-bold">{session.status}</span>
+            {t("helloNobody", {status: session.status})}
           </div>
           <Link href="/login" className="bg-cyan-800 text-white p-2 rounded">
             Go to the login page

@@ -29,18 +29,14 @@ const authOptions: NextAuthOptions = {
     /** 'jwt' is called before the 'session' callback */
     async jwt({ token, user, account, profile }) {
       // console.debug("In 'jwt' callback", token, user, account, profile);
-      if (user) {
-        token.group = "whatever you need";
-      }
       return Promise.resolve(token);
     },
     async session({ session, token, user }) {
       if (!token) {
-        // console.debug("In 'session' callback w/o token", session, token, user);
+        console.warn("In 'session' callback w/o token", session, token, user);
         return Promise.resolve(session);
       }
-      // console.debug("In 'session' callback w/ token", token, user);
-      // // console.debug("End of 'session' callback", fullSession);
+      // console.debug("End of 'session' callback", session, token, user);
       return Promise.resolve(session);
     },
   },

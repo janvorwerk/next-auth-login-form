@@ -1,0 +1,6 @@
+{
+    "messages": {
+        "hello": "Hello {username}, your status is: {status}",
+        "helloNobody": "Hello, your status is: {status}"
+    }
+}
