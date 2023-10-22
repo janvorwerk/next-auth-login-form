@@ -30,7 +30,7 @@ export default function SignIn() {
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4 p-2">
       <label htmlFor="username" className="text-lg font-bold">
-        {t("password")}
+        {t("username")}
       </label>
       <input
         value={username}
@@ -41,7 +41,7 @@ export default function SignIn() {
         className="bg-zinc-100 border p-2"
       />
       <label htmlFor="password" className="text-lg font-bold">
-        {t("username")}
+        {t("password")}
       </label>
       <input
         value={password}
