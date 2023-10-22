@@ -3,10 +3,16 @@ import { SessionProvider } from "./_lib/providers";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: 'Auth & Intl',
-  description: 'Mini proof of concept mixing Next-Auth + Next Intl with RSC',
-}
+  title: "Next Auth & Intl",
+  description: "Mini proof of concept mixing Next-Auth + Next Intl + RSC & Next app-router",
+};
 
-export default async function RootLayout(props: { children: React.ReactNode }) {
-  return <SessionProvider>{props.children}</SessionProvider>;
+export default function RootLayout(props: { children: React.ReactNode }) {
+  return (
+    <html>
+      <body>
+        <SessionProvider>{props.children}</SessionProvider>
+      </body>
+    </html>
+  );
 }

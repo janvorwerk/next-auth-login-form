@@ -21,12 +21,8 @@ export default async function LocaleLayout(props: { children: React.ReactNode; p
     notFound();
   }
   return (
-    <html lang={locale}>
-      <body>
-        <NextIntlClientProvider locale={locale} messages={messages} timeZone="UTC">
-          {props.children}
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    <NextIntlClientProvider locale={locale} messages={messages} timeZone="UTC">
+      <main lang={props.params.lang}>{props.children}</main>
+    </NextIntlClientProvider>
   );
 }
