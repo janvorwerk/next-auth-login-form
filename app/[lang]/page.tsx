@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import Greeting from "./_lib/greeting";
+import { AuthenticatedUser } from "./_lib/authenticated-user";
 
 export default function Page() {
   const session = useSession();
@@ -17,12 +18,10 @@ export default function Page() {
     <div className="flex flex-col p-4 gap-4">
       <Greeting username={session?.data?.user?.name} status={session.status}></Greeting>
       {session.status === "authenticated" ? (
-        <button className="bg-red-800 text-white p-2 rounded" onClick={logout}>
-          Logout
-        </button>
+        <AuthenticatedUser onLogout={logout}></AuthenticatedUser>
       ) : (
         <Link href="/login" className="bg-cyan-800 text-white p-2 rounded">
-          Go to the login page
+          {t("gotoLogin")}
         </Link>
       )}
     </div>

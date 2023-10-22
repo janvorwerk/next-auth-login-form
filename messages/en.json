@@ -1,6 +1,18 @@
 {
-    "messages": {
-        "hello": "Hello {username}, your status is: {status}",
-        "helloNobody": "Hello, your status is: {status}"
-    }
+  "messages": {
+    "hello": "Hello {username}",
+    "helloWithStatus": "Hello {username}, your status is: {status}",
+    "helloNobody": "Hello, your status is: {status}",
+    "restrictedContent": "This is restricted access content",
+    "gotoPage": "Go to page {page}",
+    "gotoLogin": "Go to the login page"
+  },
+  "login": {
+    "username": "Username",
+    "password": "Password",
+    "login": "Sign in",
+    "logout": "Sign out",
+    "usernamePlaceholder": "Any name you like",
+    "passwordPlaceholder": "The password should be 'pass'"
+  }
 }
