@@ -6,8 +6,6 @@
 
 ## To run
 
-To give it a try, simply visit https://next-auth-login-form.vercel.app/
-
 To run locally, you have to create an `.env.local` file at the root of the project with NextAuth configuration:
 
     # next-auth
